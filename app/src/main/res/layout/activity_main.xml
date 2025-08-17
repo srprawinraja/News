@@ -1,90 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="30dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
-    android:background="@color/white">
-
-    <!-- Search Bar -->
+    android:background="@color/white"
+    tools:context=".MainActivity">
     <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/search_bar_bg"
-        android:padding="8dp"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:contentDescription="@string/searchicon"
-            android:src="@drawable/ic_search"
-            app:tint="@color/cementOnBackground"/>
-        <EditText
-            android:id="@+id/search_input"
-            android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:background="@color/white">
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/search_bar_bg"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/searchicon"
+                android:src="@drawable/ic_search"
+                app:tint="@color/cementOnBackground"/>
+
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="@string/search"
+                android:inputType="text"
+                android:textColor="@color/cementOnBackground"/>
+        </LinearLayout>
+
+        <!-- Category bar -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:hint="@string/search"
-            android:textColor="@color/cementOnBackground"/>
+            android:layout_marginTop="50dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/categoryContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+        </HorizontalScrollView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="20sp"
+            android:textColor="#1a1a1a"
+
+            android:text="Latest News"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:scrollbars="horizontal"
+            android:clipToPadding="false"
+            android:overScrollMode="never"/>
+
+
     </LinearLayout>
-
-    <!-- Category bar -->
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:layout_marginTop="15dp">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/categoryContainer">
-            <!-- Chips added dynamically -->
-        </LinearLayout>
-    </HorizontalScrollView>
-    <?xml version="1.0" encoding="utf-8"?>
-    <HorizontalScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:scrollbars="none"
-        android:padding="16dp">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:spacing="16dp">
-
-            <!-- First image -->
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/bg"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="Image 1"/>
-
-            <!-- Second image -->
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/bg1"
-                android:scaleType="centerCrop"
-                android:contentDescription="Image 2"/>
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-
-
-
-
-
 </LinearLayout>
+

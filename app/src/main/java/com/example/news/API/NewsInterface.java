@@ -19,6 +19,7 @@ public interface NewsInterface{
     @GET("top-headlines")
         Call<NewsResponse> getAllHeadLines(
         @Query("country") String country,
+        @Query("category") String category,
         @Query("apiKey") String apiKey
     );
 

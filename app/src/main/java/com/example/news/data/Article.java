@@ -1,6 +1,7 @@
 package com.example.news.data;
 
 public class Article {
+    private Source source;
     private String author;
     private String title;
     private String  description;
@@ -8,16 +9,25 @@ public class Article {
     private String urlToImage;
     private String  publishedAt;
     private String  content;
-    private String source;
 
+    public Article(String title, Source source,  String description, String urlToImage, String publishedAt, String content) {
+        this.title = title;
+        this.source = source;
+        this.description = description;
+        this.urlToImage = urlToImage;
+        this.publishedAt = publishedAt;
+        this.content = content;
+    }
+
+
+
+    public Source getSource() {
+        return source;
+    }
     public String getAuthor() {
         return author;
     }
 
-
-    public String getSource() {
-        return source;
-    }
 
 
     public String getTitle() {
